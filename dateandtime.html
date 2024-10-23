@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <meta charset="UTF-8">
+  <meta name="description" content="Kane Kirwan Website">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Date and Time</title>
+  <style>
+    body {
+      margin: 0;
+    }
+
+    h1 {
+      margin: 0;
+      text-align: center;
+      font-family: arial;
+    }
+
+    ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      background-color: grey;
+      position: sticky;
+      top: 0
+    }
+
+    li a {
+      display: block;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      text-decoration: none;
+    }
+
+    li a:hover {
+      background-color: black;
+    }
+
+    p {
+      font-size: 50px;
+      margin-top: 250px;
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Kane Kirwan</h1>
+  <ul>
+    <li style="float:left"><a href="index.html">Home</a></li>
+    <li style="float:left"><a href="projects.html">Projects</a></li>
+    <li style="float:left"><a href="contact.html">Contact</a></li>
+    <li style="float:left"><a href="about.html">About</a></li>
+    <li style="float:right"><a href="signup.html">Sign up</a></li>
+    <li style="float:right"><a href="signin.html">Sign in</a></li>
+  </ul>
+  <p id="date/time"></p>
+  <script>
+    setInterval(function datetime() { document.getElementById("date/time").innerHTML = Date(); });
+  </script>
+</body>
+
+</html>

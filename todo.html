@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <meta charset="UTF-8">
+  <meta name="description" content="Kane Kirwan Website">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>To Do List</title>
+  <style>
+    body {
+      margin: 0;
+    }
+
+    h1 {
+      margin: 0;
+      text-align: center;
+      font-family: arial;
+    }
+
+    input {
+      font-size: 25px;
+      border: 0;
+      outline: 0;
+    }
+
+    ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      background-color: grey;
+      position: sticky;
+      top: 0
+    }
+
+    li a {
+      display: block;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      text-decoration: none;
+    }
+
+    li a:hover {
+      background-color: black;
+    }
+
+    #list {
+      background-color: white;
+      font-size: 25px;
+    }
+
+    #list li:hover {
+      text-decoration: line-through;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Kane Kirwan</h1>
+  <ul>
+    <li style="float:left"><a href="index.html">Home</a></li>
+    <li style="float:left"><a href="projects.html">Projects</a></li>
+    <li style="float:left"><a href="contact.html">Contact</a></li>
+    <li style="float:left"><a href="about.html">About</a></li>
+    <li style="float:right"><a href="signup.html">Sign up</a></li>
+    <li style="float:right"><a href="signin.html">Sign in</a></li>
+  </ul>
+  <input id="input" placeholder="What needs to be done">
+  <ul id="list"></ul>
+  <script>
+    function newItem() {
+      var item = document.getElementById('input').value;
+      var ul = document.getElementById("list");
+      var li = document.createElement('li');
+      li.appendChild(document.createTextNode(item));
+      ul.appendChild(li);
+      document.getElementById('input').value = "";
+      li.onclick = removeItem;
+    }
+    document.body.onkeyup = function (a) {
+      if (a.keyCode == 13) {
+        newItem();
+      }
+    }
+    function removeItem(a) {
+      a.target.parentElement.removeChild(a.target);
+    }
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <meta charset="UTF-8">
+  <meta name="description" content="Kane Kirwan Website">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Code Editor</title>
+  <style>
+    body {
+      margin: 0;
+    }
+
+    h1 {
+      margin: 0;
+      text-align: center;
+      font-family: arial;
+    }
+
+    ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      background-color: grey;
+      position: sticky;
+      top: 0
+    }
+
+    li a {
+      display: block;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      text-decoration: none;
+    }
+
+    li a:hover {
+      background-color: black;
+    }
+
+    textarea {
+      height: 175px;
+      width: 30%;
+      resize: none;
+      float: left;
+      outline: 0;
+      border: 1px solid black;
+    }
+
+    iframe {
+      height: 540.5px;
+      width: 69.4%;
+      float: right;
+      border: 1px solid black;
+      background-color: white;
+    }
+
+    .button {
+      float: right;
+      height: 29px;
+      border: none;
+      color: white;
+      background-color: darkslategrey;
+    }
+
+    .lightdark {
+      background-color: #121212;
+      color: white;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Kane Kirwan</h1>
+  <ul>
+    <li style="float:left"><a href="index.html">Home</a></li>
+    <li style="float:left"><a href="projects.html">Projects</a></li>
+    <li style="float:left"><a href="contact.html">Contact</a></li>
+    <li style="float:left"><a href="about.html">About</a></li>
+    <li style="float:right"><a href="signup.html">Sign up</a></li>
+    <li style="float:right"><a href="signin.html">Sign in</a></li>
+  </ul>
+  <iframe id="code"></iframe>
+  <textarea id="html" placeholder="HTML" spellcheck="false" oninput="compile()"></textarea>
+  <textarea id="css" placeholder="CSS" spellcheck="false" oninput="compile()"></textarea>
+  <textarea id="js" placeholder="JS" spellcheck="false" oninput="compile()"></textarea>
+  <button class="button" onclick="lightdark()">Light/Dark</button>
+  <script>
+    function compile() {
+      var html = document.getElementById("html");
+      var css = document.getElementById("css");
+      var js = document.getElementById("js");
+      var code = document.getElementById("code").contentWindow.document;
+      code.open();
+      code.writeln(html.value + "<style>" + css.value + "<\/style>" + "<script>" + js.value + "<\/script>");
+      code.close();
+    };
+
+    function lightdark() {
+      document.getElementById("html").classList.toggle("lightdark");
+      document.getElementById("css").classList.toggle("lightdark");
+      document.getElementById("js").classList.toggle("lightdark");
+      document.body.classList.toggle("lightdark");
+      localStorage.theme = document.body.classList.contains("lightdark") ? "dark" : "light";
+    }
+    if (localStorage.theme === "dark") {
+      document.getElementById("html").classList.add("lightdark");
+      document.getElementById("css").classList.add("lightdark");
+      document.getElementById("js").classList.add("lightdark");
+      document.body.classList.add("lightdark");
+    }
+  </script>
+</body>
+
+</html>

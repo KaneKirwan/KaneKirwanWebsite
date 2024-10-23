@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <meta charset="UTF-8">
+  <meta name="description" content="Kane Kirwan Website">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kane Kirwan</title>
+  <style>
+    body {
+      margin: 0;
+    }
+
+    h1 {
+      margin: 0;
+      text-align: center;
+      font-family: arial;
+    }
+
+    .active {
+      background-color: green;
+    }
+
+    .lightdark {
+      background-color: #121212;
+      color: white;
+    }
+
+    .button {
+      background-color: darkslategrey;
+      border: none;
+      color: white;
+      padding: 15px;
+      text-align: center;
+    }
+
+    ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      background-color: grey;
+      position: sticky;
+      top: 0
+    }
+
+    li a {
+      display: block;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      text-decoration: none;
+    }
+
+    li a:hover {
+      background-color: black;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Kane Kirwan</h1>
+  <ul>
+    <li style="float:left"><a class="active" href="index.html">Home</a></li>
+    <li style="float:left"><a href="projects.html">Projects</a></li>
+    <li style="float:left"><a href="contact.html">Contact</a></li>
+    <li style="float:left"><a href="about.html">About</a></li>
+    <li style="float:right"><a href="signup.html">Sign up</a></li>
+    <li style="float:right"><a href="signin.html">Sign in</a></li>
+  </ul>
+  <button class="button" onclick="lightdark()">Light/Dark</button>
+  <p>This is some text</p>
+  <p>This is some text</p>
+  <p>This is some text</p>
+  <p>This is some text</p>
+  <p>This is some text</p>
+  <p>This is some text</p>
+  <p>This is some text</p>
+  <p>This is some text</p>
+  <p>This is some text</p>
+  <p>This is some text</p>
+  <p>This is some text</p>
+  <p>This is some text</p>
+  <p>This is some text</p>
+  <p>This is some text</p>
+  <p>This is some text</p>
+  <p>This is some text</p>
+  <p>This is some text</p>
+  <p>This is some text</p>
+  <p>This is some text</p>
+  <p>This is some text</p>
+  <p>This is some text</p>
+  <p>This is some text</p>
+  <p>This is some text</p>
+  <p>This is some text</p>
+  <p>This is some text</p>
+  <p>This is some text</p>
+  <p>This is some text</p>
+  <p>This is some text</p>
+  <p>This is some text</p>
+  <p>This is some text</p>
+  <p>This is some text</p>
+  <p>This is some text</p>
+  <p>This is some text</p>
+  <p>This is some text</p>
+  <p>This is some text</p>
+  <p>This is some text</p>
+  <p>This is some text</p>
+  <p>This is some text</p>
+  <p>This is some text</p>
+  <p>This is some text</p>
+  <p>This is some text</p>
+  <p>This is some text</p>
+  <p>This is some text</p>
+  <p>This is some text</p>
+  <p>This is some text</p>
+  <p>This is some text</p>
+  <p>This is some text</p>
+  <p>This is some text</p>
+  <p>This is some text</p>
+  <p>This is some text</p>
+  <script>
+    function lightdark() {
+      document.body.classList.toggle("lightdark");
+      localStorage.theme = document.body.classList.contains("lightdark") ? "dark" : "light";
+    }
+    if (localStorage.theme === "dark") {
+      document.body.classList.add("lightdark");
+    }
+  </script>
+</body>
+
+</html>

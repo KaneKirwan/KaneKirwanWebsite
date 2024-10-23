@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <meta charset="UTF-8">
+  <meta name="description" content="Kane Kirwan Website">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CPS Test</title>
+  <style>
+    body {
+      margin: 0;
+    }
+
+    h1 {
+      margin: 0;
+      text-align: center;
+      font-family: arial;
+    }
+
+    .button {
+      background-color: darkslategrey;
+      border: none;
+      color: white;
+      padding: 15px;
+      text-align: center;
+    }
+
+    ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      background-color: grey;
+      position: sticky;
+      top: 0;
+    }
+
+    li a {
+      display: block;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      text-decoration: none;
+    }
+
+    li a:hover {
+      background-color: black;
+    }
+
+    #clickarea {
+      width: 100%;
+      height: 550px;
+      border: 0px solid black;
+    }
+
+    #start {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Kane Kirwan</h1>
+  <ul>
+    <li style="float:left"><a href="index.html">Home</a></li>
+    <li style="float:left"><a href="projects.html">Projects</a></li>
+    <li style="float:left"><a href="contact.html">Contact</a></li>
+    <li style="float:left"><a href="about.html">About</a></li>
+    <li style="float:right"><a href="signup.html">Sign up</a></li>
+    <li style="float:right"><a href="signin.html">Sign in</a></li>
+  </ul>
+  Timer: <span id="timer"></span><br />
+  Score: <span id="score"></span><br />
+  Clicks/s: <span id="clicks"></span>
+  <div id="clickarea">
+    <button class="button" id="start">Start</button>
+  </div>
+  <script>
+    var score;
+    var duration = 10;
+    var startTime;
+    var ended = true;
+    var timerTxt = document.getElementById("timer");
+    var scoreTxt = document.getElementById("score");
+    var clicksTxt = document.getElementById("clicks");
+    var startBtn = document.getElementById("start");
+    var clickArea = document.getElementById("clickarea");
+    var show = function (elem) {
+      elem.style.display = 'inline';
+    };
+    var hide = function (elem) {
+      elem.style.display = 'none';
+    };
+    function startGame() {
+      hide(startBtn);
+      score = -1;
+      ended = false;
+      startTime = new Date().getTime();
+      var timerId = setInterval(function () {
+        var total = (new Date().getTime() - startTime) / 1000;
+        if (total < duration) {
+          timerTxt.textContent = total.toFixed(3);
+          clicksTxt.textContent = (score / total).toFixed(2);
+        } else {
+          ended = true;
+          clearInterval(timerId);
+          endGame();
+        }
+      });
+    }
+    function endGame() {
+      var clicksPerSecond = (score / duration).toFixed(2);
+      timerTxt.textContent = duration.toFixed(3);
+      clicksTxt.textContent = clicksPerSecond;
+      show(startBtn);
+      setTimeout(function () {
+        alert('Your score is ' + clicksPerSecond + ' CPS. ' + score + ' clicks in ' + duration + ' seconds.');
+      });
+    }
+    startBtn.addEventListener("click", function (e) {
+      startGame();
+    });
+    clickArea.addEventListener("click", function (e) {
+      if (!ended) {
+        score++;
+        scoreTxt.textContent = score;
+      }
+    });
+  </script>
+</body>
+
+</html>

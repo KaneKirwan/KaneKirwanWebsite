@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <meta charset="UTF-8">
+  <meta name="description" content="Kane Kirwan Website">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kane Kirwan</title>
+  <style>
+    body {
+      margin: 0;
+    }
+
+    h1 {
+      margin: 0;
+      text-align: center;
+      font-family: arial;
+    }
+
+    h2 {
+      margin: 0;
+      text-align: center;
+      font-family: arial;
+    }
+
+    h3 {
+      margin: 0;
+      text-align: center;
+      font-family: arial;
+    }
+
+    .active {
+      background-color: green;
+    }
+
+    input[type=text] {
+      width: 100%;
+      margin: 0;
+      padding: 10px;
+      box-sizing: border-box;
+    }
+
+    button {
+      background-color: green;
+      color: white;
+      padding: 15px;
+      margin: 0;
+      border: none;
+      cursor: pointer;
+      width: 100%;
+    }
+
+    ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      background-color: grey;
+      position: sticky;
+      top: 0;
+    }
+
+    li a {
+      display: block;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      text-decoration: none;
+    }
+
+    li a:hover {
+      background-color: black;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Kane Kirwan</h1>
+  <ul>
+    <li style="float:left"><a href="index.html">Home</a></li>
+    <li style="float:left"><a href="projects.html">Projects</a></li>
+    <li style="float:left"><a href="contact.html">Contact</a></li>
+    <li style="float:left"><a href="about.html">About</a></li>
+    <li style="float:right"><a class="active" href="signup.html">Sign up</a></li>
+    <li style="float:right"><a href="signin.html">Sign in</a></li>
+  </ul>
+  <h2>Sign Up</h2>
+  <p>Email</p>
+  <input type="text">
+  <p>Password</p>
+  <input type="text">
+  <a href="index.html"><button>Sign Up</button></a>
+  <a href="signin.html">Sign In</a>
+  <h3>OR</h3>
+  <script src="https://accounts.google.com/gsi/client" async defer></script>
+  <div id="g_id_onload" data-client_id="YOUR_GOOGLE_CLIENT_ID" data-login_uri="https://your.domain/your_login_endpoint"
+    data-auto_prompt="false">
+  </div>
+  <div class="g_id_signin" data-type="standard" data-size="large" data-theme="outline" data-text="sign_in_with"
+    data-shape="rectangular" data-logo_alignment="left">
+  </div>
+</body>
+
+</html>

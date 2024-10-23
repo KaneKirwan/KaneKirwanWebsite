@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <meta charset="UTF-8">
+  <meta name="description" content="Kane Kirwan Website">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kane Kirwan</title>
+  <style>
+    body {
+      margin: 0;
+    }
+
+    h1 {
+      margin: 0;
+      text-align: center;
+      font-family: arial;
+    }
+
+    .active {
+      background-color: green;
+    }
+
+    .lightdark {
+      background-color: #121212;
+      color: white;
+    }
+
+    .button {
+      background-color: darkslategrey;
+      border: none;
+      color: white;
+      padding: 15px;
+      text-align: center;
+    }
+
+    ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      background-color: grey;
+      position: sticky;
+      top: 0
+    }
+
+    li a {
+      display: block;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      text-decoration: none;
+    }
+
+    li a:hover {
+      background-color: black;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Kane Kirwan</h1>
+  <ul>
+    <li style="float:left"><a href="index.html">Home</a></li>
+    <li style="float:left"><a class="active" href="projects.html">Projects</a></li>
+    <li style="float:left"><a href="contact.html">Contact</a></li>
+    <li style="float:left"><a href="about.html">About</a></li>
+    <li style="float:right"><a href="signup.html">Sign up</a></li>
+    <li style="float:right"><a href="signin.html">Sign in</a></li>
+  </ul>
+  <button class="button" onclick="lightdark()">Light/Dark</button>
+  <a href="https://github.com/KaneKirwan/KaneKirwan/archive/refs/heads/main.zip">Kane Kirwan</a>
+  <a href="https://github.com/KaneKirwan/KaneKirwanAdBlocker/archive/refs/heads/main.zip">Ad Blocker</a>
+  <a href="https://github.com/KaneKirwan/KaneKirwanAutoClicker/archive/refs/heads/main.zip">Auto Clicker</a>
+  <a href="https://github.com/KaneKirwan/KaneKirwanDiscordBot/archive/refs/heads/main.zip">Discord Bot</a>
+  <a href="https://github.com/KaneKirwan/KaneKirwanOS/archive/refs/heads/main.zip">OS</a>
+  <a href="https://github.com/KaneKirwan/KaneKirwanSyntaxHighlighter/archive/refs/heads/main.zip">Syntax Highlighter</a>
+  <a href="https://github.com/KaneKirwan/KaneKirwanWebsite/archive/refs/heads/main.zip">Website</a>
+  <a href="https://github.com/KaneKirwan/KaneKirwanPCGame/archive/refs/heads/main.zip">PC Game</a>
+  <a href="https://github.com/KaneKirwan/KaneKirwanVRGame/archive/refs/heads/main.zip">VR Game</a>
+  <a href="https://discord.com/api/oauth2/authorize?client_id=855889176359993376&permissions=8&scope=bot">Add Discord Bot to Discord Sever</a>
+  <a href="chess.html">Chess</a>
+  <a href="codeeditor.html">Code Editor</a>
+  <a href="cps.html">CPS Test</a>
+  <a href="dateandtime.html">Date/Time</a>
+  <a href="stopwatch.html">Stopwatch</a>
+  <a href="todo.html">To Do</a>
+  <script>
+    function lightdark() {
+      document.body.classList.toggle("lightdark");
+      localStorage.theme = document.body.classList.contains("lightdark") ? "dark" : "light";
+    }
+    if (localStorage.theme === "dark") {
+      document.body.classList.add("lightdark");
+    }
+  </script>
+</body>
+
+</html>
